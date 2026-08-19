@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ТАМЫР — Café</title>
+
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+<header class="header">
+    <div class="logo">ТАМЫР<span>.</span></div>
+
+    <nav>
+        <a href="#about">О нас</a>
+        <a href="#menu">Меню</a>
+        <a href="#reviews">Отзывы</a>
+        <a href="#booking">Бронь</a>
+        <a href="#contacts">Контакты</a>
+    </nav>
+
+    <button class="booking-btn" onclick="scrollToBooking()">
+        Забронировать
+    </button>
+
+    <button class="burger" onclick="toggleMenu()">☰</button>
+</header>
+
+
+<main>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div class="label">CAFÉ • ALMATY</div>
+
+            <h1>
+                Вкус,<br>
+                который <span>объединяет.</span>
+            </h1>
+
+            <p>
+                Современная кухня с уважением к традициям.
+                Место для встреч, разговоров и хорошего вкуса.
+            </p>
+
+            <div class="buttons">
+
+                <a href="#menu" class="main-btn">
+                    Смотреть меню
+                </a>
+
+                <a href="#booking" class="second-btn">
+                    Забронировать
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-photo">
+
+            <div class="photo-card">
+
+                <small>Рекомендуем сегодня</small>
+
+                <h3>
+                    Бешбармак<br>
+                    по-ТАМЫРски
+                </h3>
+
+                <strong>4 900 ₸</strong>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section class="about" id="about">
+
+        <div class="section-number">
+            01 — О НАС
+        </div>
+
+        <div class="about-grid">
+
+            <h2>
+                Место,<br>
+                куда хочется <span>вернуться.</span>
+            </h2>
+
+            <div class="about-text">
+
+                <p>
+                    ТАМЫР — современное кафе в самом сердце Алматы,
+                    где знакомые вкусы получают новое звучание.
+                </p>
+
+                <p>
+                    Мы объединяем атмосферу современного города,
+                    уважение к традициям и любовь к качественной еде.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- MENU -->
+
+    <section class="menu" id="menu">
+
+        <div class="section-number">
+            02 — МЕНЮ
+        </div>
+
+        <div class="title">
+
+            <h2>
+                Наши <span>блюда.</span>
+            </h2>
+
+            <p>
+                Простые ингредиенты. Честный вкус.
+            </p>
+
+        </div>
+
+
+        <div class="categories">
+
+            <button class="category active"
+                    onclick="filterMenu('all', this)">
+                Все
+            </button>
+
+            <button class="category"
+                    onclick="filterMenu('breakfast', this)">
+                Завтраки
+            </button>
+
+            <button class="category"
+                    onclick="filterMenu('main', this)">
+                Основные
+            </button>
+
+            <button class="category"
+                    onclick="filterMenu('dessert', this)">
+                Десерты
+            </button>
+
+            <button class="category"
+                    onclick="filterMenu('drink', this)">
+                Напитки
+            </button>
+
+        </div>
+
+
+        <div class="menu-grid">
+
+
+            <article class="food-card" data-category="breakfast">
+
+                <div class="food-image image1"></div>
+
+                <div class="food-info">
+
+                    <div>
+                        <h3>Бенедикт с лососем</h3>
+                        <p>Авокадо, яйцо пашот, голландский соус</p>
+                    </div>
+
+                    <strong>4 500 ₸</strong>
+
+                </div>
+
+            </article>
+
+
+            <article class="food-card" data-category="breakfast">
+
+                <div class="food-image image2"></div>
+
+                <div class="food-info">
+
+                    <div>
+                        <h3>Авокадо-тост</h3>
+                        <p>Авокадо, яйцо, зелень, хлеб</p>
+                    </div>
+
+                    <strong>3 900 ₸</strong>
+
+                </div>
+
+            </article>
+
+
+            <article class="food-card" data-category="main">
+
+                <div class="food-image image3"></div>
+
+                <div class="food-info">
+
+                    <div>
+                        <h3>Бешбармак ТАМЫР</h3>
+                        <p>Традиционный вкус в современной подаче</p>
+                    </div>
+
+                    <strong>4 900 ₸</strong>
+
+                </div>
+
+            </article>
+
+
+            <article class="food-card" data-category="main">
+
+                <div class="food-image image4"></div>
+
+                <div class="food-info">
+
+                    <div>
+                        <h3>Паста с курицей</h3>
+                        <p>Сливочный соус, пармезан, травы</p>
+                    </div>
+
+                    <strong>4 800 ₸</strong>
+
+                </div>
+
+            </article>
+
+
+            <article class="food-card" data-category="dessert">
+
+                <div class="food-image image5"></div>
+
+                <div class="food-info">
+
+                    <div>
+                        <h3>Чизкейк</h3>
+                        <p>Сливочный крем и ягодный соус</p>
+                    </div>
+
+                    <strong>2 900 ₸</strong>
+
+                </div>
+
+            </article>
+
+
+            <article class="food-card" data-category="drink">
+
+                <div class="food-image image6"></div>
+
+                <div class="food-info">
+
+                    <div>
+                        <h3>Капучино</h3>
+                        <p>100% арабика</p>
+                    </div>
+
+                    <strong>1 500 ₸</strong>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- FEATURE -->
+
+    <section class="feature">
+
+        <div>
+
+            <div class="label">
+                TAMYR SPECIAL
+            </div>
+
+            <h2>
+                Традиции,<br>
+                <span>переосмысленные</span><br>
+                нами.
+            </h2>
+
+            <p>
+                Берём знакомые каждому вкусы
+                и создаём новую историю на тарелке.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- REVIEWS -->
+
+    <section class="reviews" id="reviews">
+
+        <div class="section-number">
+            03 — ОТЗЫВЫ
+        </div>
+
+        <h2>
+            Нас <span>любят.</span>
+        </h2>
+
+
+        <div class="reviews-grid">
+
+            <div class="review">
+
+                <div class="stars">★★★★★</div>
+
+                <p>
+                    «Очень приятное место.
+                    Вкусная еда и невероятная атмосфера.»
+                </p>
+
+                <strong>Алина</strong>
+
+            </div>
+
+
+            <div class="review">
+
+                <div class="stars">★★★★★</div>
+
+                <p>
+                    «Бешбармак — отдельная любовь.
+                    Обязательно вернусь сюда снова.»
+                </p>
+
+                <strong>Данияр</strong>
+
+            </div>
+
+
+            <div class="review">
+
+                <div class="stars">★★★★★</div>
+
+                <p>
+                    «Идеальное место для спокойного
+                    вечера с друзьями.»
+                </p>
+
+                <strong>Мадина</strong>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- BOOKING -->
+
+    <section class="booking" id="booking">
+
+        <div>
+
+            <div class="section-number">
+                04 — БРОНЬ
+            </div>
+
+            <h2>
+                Забронируйте<br>
+                свой <span>столик.</span>
+            </h2>
+
+            <p>
+                Заполните форму и мы свяжемся
+                с вами для подтверждения.
+            </p>
+
+        </div>
+
+
+        <form id="bookingForm">
+
+            <input
+                type="text"
+                placeholder="Ваше имя"
+                required
+            >
+
+            <input
+                type="tel"
+                placeholder="Телефон"
+                required
+            >
+
+            <input
+                type="date"
+                required
+            >
+
+            <select required>
+
+                <option value="">
+                    Количество гостей
+                </option>
+
+                <option>1 человек</option>
+                <option>2 человека</option>
+                <option>3 человека</option>
+                <option>4 человека</option>
+                <option>5 человек</option>
+                <option>6+ человек</option>
+
+            </select>
+
+
+            <button type="submit">
+                Забронировать столик
+            </button>
+
+            <div id="formMessage"></div>
+
+        </form>
+
+    </section>
+
+
+    <!-- CONTACTS -->
+
+    <section class="contacts" id="contacts">
+
+        <div class="section-number">
+            05 — КОНТАКТЫ
+        </div>
+
+        <div class="contacts-grid">
+
+            <div>
+                <small>Адрес</small>
+                <h3>ул. Панфилова, 100<br>Алматы</h3>
+            </div>
+
+            <div>
+                <small>Работаем</small>
+                <h3>Каждый день<br>09:00 — 23:00</h3>
+            </div>
+
+            <div>
+                <small>Телефон</small>
+                <h3>+7 700 000 00 00</h3>
+            </div>
+
+            <div>
+                <small>Instagram</small>
+                <h3>@tamyr.cafe</h3>
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <div class="logo">
+        ТАМЫР<span>.</span>
+    </div>
+
+    <p>
+        © 2026 ТАМЫР Café
+    </p>
+
+    <p>
+        Вкус, который объединяет.
+    </p>
+
+</footer>
+
+
+<script src="./script.js"></script>
+
+</body>
+</html>
